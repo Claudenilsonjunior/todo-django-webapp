@@ -1,0 +1,8 @@
+<h1>Create a task</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+    <button type="button" onclick="location.href='{% url 'tasks' %}'">Cancel</button>
+</form>

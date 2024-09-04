@@ -1,0 +1,114 @@
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1b1b1b; /* Dark modern background */
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Bangers', cursive; /* Superhero comic font */
+    color: #e50914; /* Vibrant red, reminiscent of superhero logos */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #282828; /* Dark sleek navbar */
+    padding: 1rem;
+}
+
+.navbar-brand {
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+    color: #e50914;
+    padding: 0.5rem 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #e50914;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #f39c12;
+    transition: 0.3s;
+}
+
+.btn-danger {
+    background-color: #c0392b;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-info {
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Task List */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-actions .btn {
+    margin-right: 0.5rem;
+}
+
+/* Icons */
+.task-actions .btn-info {
+    display: inline-block;
+    background-image: url('/static/icons/lightning.svg'); /* Example superhero icon */
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    padding-left: 30px; /* Adding space for the icon */
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .task-item {
+        flex-direction: column;
+    }
+}
+
+/* Login/Register Forms */
+form {
+    background-color: #282828;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #d35400;
+}

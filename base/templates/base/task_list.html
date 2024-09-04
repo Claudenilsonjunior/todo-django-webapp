@@ -1,3 +1,13 @@
+{% extends 'base/base.html' %}
+
+{% block title %} 
+
+    Task List 
+
+{% endblock %}
+
+{% block content %}
+
 
 {% if request.user.is_authenticated %}
     <p>Welcome {{ request.user }}!</p>
@@ -38,4 +48,6 @@
         <li class="no-tasks">No tasks found. Please add a task.</li>
     {% endfor %}
 </ul>
+
+{% endblock %}
 

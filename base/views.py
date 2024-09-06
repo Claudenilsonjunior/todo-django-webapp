@@ -56,7 +56,7 @@ class TaskList(LoginRequiredMixin, ListView):
         search_input = self.request.GET.get('search') or ''
         if search_input:
             context['tasks'] = context['tasks'].filter(
-                title_icontains = search_input)
+                title__icontains = search_input)
         
         
         context['search_input'] = search_input

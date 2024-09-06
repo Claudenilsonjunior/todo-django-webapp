@@ -6,7 +6,7 @@
     
     <h1> Hello, {{ request.user|title }}!</h1>
     
-    <h3 style = "margin:0"> You have <i>{{ tasks.count }}</i> task {{ count|pluralize:"s" }} to do.</h3>
+    <h4 style = "margin:0"> You have <i>{{ count }}</i> task{{ count|pluralize:'s' }} to do.</h4>
 
 
 {% if request.user.is_authenticated %}
@@ -23,7 +23,7 @@
         <input type="text" name="search" placeholder="Search tasks" value="{{ search_input }}">
         <button class = "btn" type="submit">Search</button>
     </form>
-    <a id = "add-link" href="{% url 'task_create' %}" >&#10133;</a>
+    <a id = "add-link" href="{% url 'task_create' %}" >&#43;</a>
 </div>
 
 

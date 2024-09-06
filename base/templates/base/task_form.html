@@ -1,8 +1,22 @@
-<h1>Create a task</h1>
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class = 'header-bar'>
+
+    <a href = "{% url 'tasks' %}">&#8592; Back</a>
+
+</div>
+
+<div class = "card-body">
 
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button>
-    <button type="button" onclick="location.href='{% url 'tasks' %}'">Cancel</button>
+    <button class = "btn" type="submit">Submit</button>
 </form>
+
+</div>
+
+
+{% endblock %}

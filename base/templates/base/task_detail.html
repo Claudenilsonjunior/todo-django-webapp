@@ -1,1 +1,18 @@
+{% extends 'base/base.html' %}
+
+{% block title %} 
+
+    Task Detail 
+
+{% endblock %}
+
+{% block content %}
+
 <h1>Task Detail: {{ task }}</h1>
+
+<p>{{ task.description }}</p>
+<p><strong>Due Date:</strong> {{ task.due_date }}</p>
+<p><strong>Completed:</strong> {{ task.complete }}</p>
+<p><strong>Created on:</strong> {{ task.created }}</p>
+
+{% endblock %}

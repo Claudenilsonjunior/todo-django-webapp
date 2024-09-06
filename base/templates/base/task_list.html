@@ -1,53 +1,81 @@
 {% extends 'base/base.html' %}
-
-{% block title %} 
-
-    Task List 
-
-{% endblock %}
-
 {% block content %}
 
 
+<div class= 'header-bar'>
+    
+    <h1> Hello, {{ request.user|title }}!</h1>
+    
+    <h3 style = "margin:0"> You have <i>{{ tasks.count }}</i> task {{ count|pluralize:"s" }} to do.</h3>
+
+
 {% if request.user.is_authenticated %}
-    <p>Welcome {{ request.user|title }}!</p>
     <a href="{% url 'logout' %}">Logout</a>
 {% else %}
-    <p>Welcome Guest!</p>
     <a href="{% url 'login' %}">Login</a>
 {% endif %}
+</div>
 
 <h1>Task List </h1>
 
 <!-- Button to create a new task -->
 <a href="{% url 'task_create' %}" class="btn btn-primary">Create a Task</a>
 
-<form method="GET">
+<!-- <form method="GET">
     <input type="text" name="search" placeholder="Search tasks" value="{{ search_input }}">
     <button type="submit">Search</button>
 </form>
+-->
+
+<div class = "task.items-wrapper">
+    {% for task in tasks %}
+
+    <div class = "task-wrapper">
+        
+        {% if task.complete %}
+
+            <div class="task-title">
+
+                <div class = "task-complete-icon"></div>
+
+                <i><s><a href="{% url 'task_update' task.id %}">{{task}}</a></s></i>
+
+            </div>
+
+            {%else%}
+
+            <div class="task-title">
+
+                <div class = "task-complete-icon"></div>
+
+                <i><s><a href="{% url 'task_update' task.id %}">{{task}}</a></s></i>
+
+            </div>
+
+        {%endif%}
+    
+    </div>
+
+    {%empty%}
+
+    <li class="no-tasks">No tasks found. Please add a task.</li>
+    {% endfor %}
+
+</div>
+
 
 <!-- Task list -->
 <ul class="task-list">
     {% for task in tasks %}
         <li class="task-item">
             <h2>{{ task.title }}</h2>
-            <p>{{ task.description }}</p>
-            <p><strong>Due Date:</strong> {{ task.due_date }}</p>
-            <p><strong>Completed:</strong> {{ task.complete }}</p>
-            <p><strong>Created on:</strong> {{ task.created }}</p>
-
             <!-- Task action buttons -->
             <div class="task-actions">
-                <a href="{% url 'task' task.id %}" class="btn btn-info">View</a>
                 <a href="{% url 'task_update' task.id %}" class="btn btn-warning">Update</a>
                 <a href="{% url 'task_delete' task.id %}" class="btn btn-danger">Delete</a>
             </div>
         </li>
     {% empty %}
-        <li class="no-tasks">No tasks found. Please add a task.</li>
     {% endfor %}
 </ul>
-
 {% endblock %}
-

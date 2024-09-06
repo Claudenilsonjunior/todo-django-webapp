@@ -11,11 +11,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
         <style>
             body {
-                background-color: #fafafa;
-                font-family: "Nunito", sans-serif;
+                background-color: #FAFAFA; 
+                font-family: "Roboto", sans-serif;
+                color: #f8f8ff;
                 padding-top: 50px;
              }
 
@@ -25,20 +27,23 @@
              h4,
              h5,
              h6 {
-                font-family: "Modern Antiqua", serif;
+                font-family: "Nunito", sans-serif;
+                color: #f8f8ff;
              }
 
              a,
              p {
-                color: #4b514b;
+                color: #f8f8ff;
                 text-decoration: none;
              }
 
              .container {
-
+                border-radius: 8px;
                 max-width: 550px;
                 margin: auto;
-                background-color: #fff;
+                background-color: #282c34;
+                background-image: radial-gradient(circle, #353a40, #282c34);
+                color: #f8f8ff;
                 -webkit-box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
                 box-shadow: 2px 2px 13px -4px rgba(0,0,0,0.21);
              }
@@ -49,16 +54,25 @@
                 color: #fff;
                 padding: 10px;
                 border-radius: 5px 5px 0 0;
-                background: linear-gradient(90deg, #00a8ff, #00e0ff);
+                background: linear-gradient(90deg, #f05a28, #d92027);
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
              }
              
             .task-wrapper {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 20px;
-                background-color: #fff;
+                padding: 15px;
+                background-color: #3c4043;
                 border-top: 1px solid rgb(226, 226, 226);
+                border-radius: 8px;
+                margin-bottom: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                color: #f8f8ff;
+            }
+
+            .task-wrapper:hover {
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             }
 
             .task-title {
@@ -68,14 +82,19 @@
 
             .task-title a {
                 text-decoration: none;
-                color: #4b514b;
+                color: #FAFAFA;
                 margin-left: 10px;
+            }
+
+            .task-title a:hover {
+                color: #f05a28;
+                text-decoration: underline;
             }
 
             .task-complete-icon {
                 height: 20px;
                 width: 20px;
-                background-color: rgb(105, 192, 105);
+                background-color: #34c759;
                 border-radius: 50%;
                 margin-right: 10px;
             }
@@ -83,7 +102,7 @@
             .task-incomplete-icon {
                 height: 20px;
                 width: 20px;
-                background-color: rgb(218, 218, 218);
+                background-color: #ffc107;
                 border-radius: 50%;
                 margin-right: 10px;
             }
@@ -91,10 +110,15 @@
             .delete-link {
                 text-decoration: none;
                 font-weight: 900;
-                color: #ff0000;
-                font-size: 22px;
+                color: #d92027;
+                font-size: 24px;
                 line-height: 0px;
                 margin-left: 10px;
+                transition: color 0.2s ease;
+            }
+
+            .delete-link:hover {
+                color: #ff6b6b;
             }
 
             #search-add-wrapper {
@@ -105,7 +129,7 @@
             }
 
             #add-link {
-                color: #EB796F;
+                color: #ffc107;
                 text-decoration: none;
                 font-size: 42px;
                 text-shadow: 1px 1px #81413b;
@@ -130,15 +154,21 @@
 
             .btn {
 
-                border: 1px solid #EB796F;
-                background-color: #FAFAFA;
-                color: #EB796F;
+                border: 1px solid #f05a28;
+                background-color: #d92027;
+                color: #fff;
                 padding: 10px;
                 font-size: 14 px;
                 border-radius: 5px;
                 cursor: pointer;
                 text-decoration: none;
+                transition: transform 0.2s ease, background-color 0.2s ease;
 
+            }
+
+            .btn:hover {
+                background-color: #f05a28;
+                transform: scale(1.05);
             }
 
             .card-body {

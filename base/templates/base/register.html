@@ -18,11 +18,8 @@
 
 
   <button class="btn" type="submit">Register</button>
-  <button type="button" onclick="location.href='{% url 'login' %}'">
-    Cancel
-  </button>
 </form>
 
-<p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+<p>Already have an account? <u><a href="{% url 'login' %}">Login</a></u></p>
 </div>
 {% endblock %}
